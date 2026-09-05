@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "wavespeed",
+  "version": "1.0.0",
+  "description": "Generate and edit AI media (image, video, audio, 3D) on the WaveSpeed platform: a general skill for the wavespeed CLI plus per-model skills (Seedream, Seedance, Veo 3.1, Wan, Nano Banana, MiniMax Speech, face swap, upscalers, watermark removal), and the @wavespeed/mcp server.",
+  "author": {
+    "name": "WaveSpeedAI",
+    "email": "support@wavespeed.ai",
+    "url": "https://wavespeed.ai"
+  },
+  "keywords": [
+    "wavespeed",
+    "image generation",
+    "video generation",
+    "text to image",
+    "image to video",
+    "text to video",
+    "video edit",
+    "upscale",
+    "face swap",
+    "watermark",
+    "text to speech",
+    "3d generation",
+    "seedream",
+    "seedance",
+    "veo",
+    "wan",
+    "nano banana",
+    "minimax"
+  ],
+  "homepage": "https://wavespeed.ai",
+  "repository": "https://github.com/WaveSpeedAI/agent-skills",
+  "license": "MIT"
+}
