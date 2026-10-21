@@ -24,7 +24,7 @@ wavespeed status         # confirms you are signed in
 
 For CI or one-off shells, `WAVESPEED_API_KEY` in the environment also works.
 
-Prefer MCP tools over shell commands? The same platform is exposed by [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) (`npx -y @wavespeed/mcp`; tools `search_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `get_prediction`). It shares the CLI's stored login. Every example below maps one-to-one onto `run_model` with the same model id and input fields.
+Prefer MCP tools over shell commands? The same platform is exposed by [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) (`npx -y @wavespeed/mcp@latest`; tools `search_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `get_prediction`). It shares the CLI's stored login. Every example below maps one-to-one onto `run_model` with the same model id and input fields.
 
 ## Quick Start
 
@@ -125,7 +125,7 @@ WaveSpeed's [Terms of Service](https://wavespeed.ai/static/terms) prohibit using
 # Inspect the live input schema before running (fields, enums, defaults)
 wavespeed run wavespeed-ai/image-watermark-remover -h
 
-# Quote the price first
+# Estimate the cost (no generation, no charge)
 wavespeed price wavespeed-ai/image-watermark-remover -p "..." -i key=value
 
 # Save outputs to disk instead of only printing URLs
@@ -139,6 +139,8 @@ wavespeed show <id>
 ```
 
 `run --json` prints `{ id, model, prompt, outputs: [url, ...], saved: [path, ...], elapsed_ms, raw }`. Read `outputs[0]` for the result URL.
+
+A `run` that fails with a gateway or network error (502/503/504, connection reset, timeout) does NOT mean the task failed, and the submit request is never retried automatically, so re-running can create a duplicate paid task. Do not re-run immediately. If the error contains a task id (`task_id` / prediction id), keep checking it with `wavespeed show <id> --json` until its status is terminal (`completed`, `failed`, `cancelled`, `timeout`, `deleted`). If no id was returned, check recent predictions with `wavespeed history --json` (add `--model <id>`; default window is the last 24h) and re-run once only if none matches. A client-side wait timeout or an interrupted `run` does not mean the task failed: tasks can run for a long time, so do not give up after a fixed time.
 
 ## Security constraints
 
