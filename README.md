@@ -61,7 +61,7 @@ wavespeed login        # opens https://wavespeed.ai/accesskey and stores the key
 
 ## Recommended models
 
-Images: `bytedance/seedream-v5.0-pro`. Video: `wavespeed-ai/minimax-h3/*` as the cheap open-weights starting point, `bytedance/seedance-2.5/*` for the highest quality. Everything else is one `wavespeed models <query>` away.
+Images: Seedream 5 Pro (`wavespeed generate image` / `edit image`). Video: Seedance 2.5 (`wavespeed generate video`, `edit video`, `extend video`), with Kling 4.0, Wan 3.0 and MiniMax H3 (cheap, native audio, 768p) as alternatives. Everything else is one `wavespeed models <query>` away.
 
 ## Support, privacy, terms
 
