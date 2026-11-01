@@ -3,12 +3,14 @@ name: wavespeed-seedream-45
 description: Generate and edit images using ByteDance's Seedream V4.5 model via WaveSpeed AI. Supports text-to-image generation and multi-image editing with custom resolutions up to 4096x4096. Features enhanced typography for posters and logos. Use when the user wants to create or edit images with high-quality text rendering.
 metadata:
   author: wavespeedai
-  version: "2.0"
+  version: "2.1"
 ---
 
 # WaveSpeedAI Seedream V4.5 Image Generation/Editing
 
 Generate and edit images using ByteDance's Seedream V4.5 model via the WaveSpeed AI platform. Supports custom resolutions up to 4096x4096 with enhanced typography for sharp text rendering in posters and logos.
+
+> **Newer model available:** Seedream 5 Pro (`bytedance/seedream-v5.0-pro`) is the current generation; see the `wavespeed-seedream-5-pro` skill. This model stays available for existing workflows.
 
 ## Setup
 

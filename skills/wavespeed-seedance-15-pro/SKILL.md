@@ -3,12 +3,14 @@ name: wavespeed-seedance-15-pro
 description: Generate videos using ByteDance's Seedance V1.5 Pro model via WaveSpeed AI. Supports text-to-video and image-to-video generation with 4-12 second duration at up to 1080p. Features audio generation, camera control, smart duration, and configurable seeds. Use when the user wants to create videos from text prompts or animate images.
 metadata:
   author: wavespeedai
-  version: "2.0"
+  version: "2.1"
 ---
 
 # WaveSpeedAI Seedance V1.5 Pro Video Generation
 
 Generate videos using ByteDance's Seedance V1.5 Pro model via the WaveSpeed AI platform. Supports both text-to-video and image-to-video generation with 4-12 second duration at up to 1080p resolution, with optional audio generation.
+
+> **Newer model available:** Seedance 2.5 (`bytedance/seedance-2.5/*`) is the current generation; see the `wavespeed-seedance-25` skill. This model stays available for existing workflows.
 
 ## Setup
 

@@ -3,12 +3,14 @@ name: wavespeed-wan-26
 description: Generate videos using Alibaba's Wan 2.6 model via WaveSpeed AI. Supports text-to-video and image-to-video generation with up to 15 seconds duration at 720p or 1080p. Features audio-guided generation, prompt expansion, multi-shot mode, and configurable seeds. Use when the user wants to create videos from text prompts or animate images.
 metadata:
   author: wavespeedai
-  version: "2.0"
+  version: "2.1"
 ---
 
 # WaveSpeedAI Wan 2.6 Video Generation
 
 Generate videos using Alibaba's Wan 2.6 model via the WaveSpeed AI platform. Supports both text-to-video and image-to-video generation with up to 15 seconds of video at up to 1080p resolution.
+
+> **Newer model available:** Wan 3.0 (`alibaba/wan-3.0/*`) is the current generation; see the `wavespeed-wan-30` skill. This model stays available for existing workflows.
 
 ## Setup
 

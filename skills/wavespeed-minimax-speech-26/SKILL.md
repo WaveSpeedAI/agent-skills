@@ -3,12 +3,14 @@ name: wavespeed-minimax-speech-26
 description: Convert text to speech using MiniMax Speech 2.6 Turbo via WaveSpeed AI. Features ultra-human voice cloning, sub-250ms latency, 40+ languages, emotion control, and 200+ voice presets. Use when the user wants to generate speech audio from text.
 metadata:
   author: wavespeedai
-  version: "2.0"
+  version: "2.1"
 ---
 
 # WaveSpeedAI MiniMax Speech 2.6 Turbo
 
 Convert text to speech using MiniMax Speech 2.6 Turbo via the WaveSpeed AI platform. Features ultra-human voice cloning, sub-250ms latency, 40+ language support, and emotion control.
+
+> **Newer model available:** MiniMax Speech 2.8 (`minimax/speech-2.8-hd` / `minimax/speech-2.8-turbo`) is the current generation; see the `wavespeed-minimax-speech-28` skill. This model stays available for existing workflows.
 
 ## Setup
 

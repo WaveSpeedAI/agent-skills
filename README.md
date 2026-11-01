@@ -1,6 +1,6 @@
 # WaveSpeed Agent Skills
 
-Agent Skills for generating and editing AI media — image, video, audio, 3D — on the [WaveSpeed](https://wavespeed.ai) platform. One general skill teaches the agent the find → inspect → run workflow on the open-source [`wavespeed` CLI](https://github.com/WaveSpeedAI/wavespeed-cli); thirteen per-model skills carry each model's inputs, pricing, and prompt tips. The bundled [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) server exposes the same platform as MCP tools.
+Agent Skills for generating and editing AI media — image, video, audio, 3D — on the [WaveSpeed](https://wavespeed.ai) platform. One general skill teaches the agent the image and video shortcuts and the find → inspect → run workflow, on the open-source [`wavespeed` CLI](https://github.com/WaveSpeedAI/wavespeed-cli) or the WaveSpeed MCP tools; twenty-one per-model skills carry each model's inputs, pricing, and prompt tips. The bundled [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) server exposes the same platform as MCP tools.
 
 Every skill follows the [Agent Skills](https://agentskills.io) `SKILL.md` format, and the repo root is an [Agent Plugins 1.0](https://agent-plugins.org) package (`plugin.json` + `mcp.json` + `skills/`), so it installs as-is into Kiro, Codex, Qwen Code, OpenHands and any other Agent Plugins consumer.
 
@@ -9,6 +9,14 @@ Every skill follows the [Agent Skills](https://agentskills.io) `SKILL.md` format
 | Skill | What it covers |
 |---|---|
 | `wavespeed` | The whole catalog: search models, read a model's schema, quote the price, run, upload local files with `@path`. Start here. |
+| `wavespeed-seedream-5-pro` | ByteDance Seedream 5 Pro text-to-image, editing and layer decomposition |
+| `wavespeed-gpt-image-25` | OpenAI GPT Image 2.5 (Sunburst and Flare) text-to-image and editing |
+| `wavespeed-nano-banana-21` | Google Nano Banana 2.1 text-to-image and editing |
+| `wavespeed-seedance-25` | ByteDance Seedance 2.5 text, image and reference to video, video edit and extend |
+| `wavespeed-kling-40` | Kuaishou Kling 4.0 text, image and reference to video, video edit and extend |
+| `wavespeed-wan-30` | Alibaba Wan 3.0 and Wan 3.0 Prime video generation, edit and extend |
+| `wavespeed-minimax-h3` | MiniMax H3 video generation, edit and extend, 768p by default |
+| `wavespeed-minimax-speech-28` | MiniMax Speech 2.8 HD and Turbo text-to-speech |
 | `wavespeed-seedream-45` | ByteDance Seedream 4.5 text-to-image and image editing |
 | `wavespeed-nano-banana-pro` | Google Nano Banana Pro text-to-image and editing, native 4K |
 | `wavespeed-nano-banana-2` | Google Nano Banana 2 text-to-image and editing |
