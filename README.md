@@ -49,7 +49,7 @@ npx skills add WaveSpeedAI/agent-skills --skill wavespeed
 **Dedicated packages** (same skills, native packaging):
 
 - Claude Code: [WaveSpeedAI/claude-plugins](https://github.com/WaveSpeedAI/claude-plugins)
-- Codex: [WaveSpeedAI/codex-plugin-wavespeed-cli](https://github.com/WaveSpeedAI/codex-plugin-wavespeed-cli)
+- Codex: [WaveSpeedAI/codex-plugins](https://github.com/WaveSpeedAI/codex-plugins)
 - Kimi Code CLI: [WaveSpeedAI/wavespeed-kimi-plugin](https://github.com/WaveSpeedAI/wavespeed-kimi-plugin)
 - Gemini CLI: [WaveSpeedAI/wavespeed-gemini-extension](https://github.com/WaveSpeedAI/wavespeed-gemini-extension)
 - DeepSeek Harness: [WaveSpeedAI/wavespeed-dsh-skill](https://github.com/WaveSpeedAI/wavespeed-dsh-skill)
