@@ -1,52 +1,28 @@
 # WaveSpeed Agent Skills
 
-Agent Skills for generating and editing AI media — image, video, audio, 3D — on the [WaveSpeed](https://wavespeed.ai) platform. One general skill teaches the agent the image and video shortcuts and the find → inspect → run workflow, on the open-source [`wavespeed` CLI](https://github.com/WaveSpeedAI/wavespeed-cli) or the WaveSpeed MCP tools; twenty-one per-model skills carry each model's inputs, pricing, and prompt tips. The bundled [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) server exposes the same platform as MCP tools.
+Agent Skills for generating and editing AI media — image, video, audio, 3D — on the [WaveSpeed](https://wavespeed.ai) platform. One general skill teaches the agent the image and video shortcuts and the find → inspect → run workflow, on the open-source [`wavespeed` CLI](https://github.com/WaveSpeedAI/wavespeed-cli) or the WaveSpeed MCP tools. The bundled [`@wavespeed/mcp`](https://github.com/WaveSpeedAI/mcp-server) server exposes the same platform as MCP tools.
 
-Every skill follows the [Agent Skills](https://agentskills.io) `SKILL.md` format, and the repo root is an [Agent Plugins 1.0](https://agent-plugins.org) package (`plugin.json` + `mcp.json` + `skills/`), so it installs as-is into Kiro, Codex, Qwen Code, OpenHands and any other Agent Plugins consumer.
+The skill follows the [Agent Skills](https://agentskills.io) `SKILL.md` format, and the repo root is an [Agent Plugins 1.0](https://agent-plugins.org) package (`plugin.json` + `mcp.json` + `skills/`), so it installs as-is into Kiro, Codex, Qwen Code, OpenHands and any other Agent Plugins consumer.
 
-## Skills
+## Skill
 
-| Skill | What it covers |
-|---|---|
-| `wavespeed` | The whole catalog: search models, read a model's schema, quote the price, run, upload local files with `@path`. Start here. |
-| `wavespeed-seedream-5-pro` | ByteDance Seedream 5 Pro text-to-image, editing and layer decomposition |
-| `wavespeed-gpt-image-25` | OpenAI GPT Image 2.5 (Sunburst and Flare) text-to-image and editing |
-| `wavespeed-nano-banana-21` | Google Nano Banana 2.1 text-to-image and editing |
-| `wavespeed-seedance-25` | ByteDance Seedance 2.5 text, image and reference to video, video edit and extend |
-| `wavespeed-kling-40` | Kuaishou Kling 4.0 text, image and reference to video, video edit and extend |
-| `wavespeed-wan-30` | Alibaba Wan 3.0 and Wan 3.0 Prime video generation, edit and extend |
-| `wavespeed-minimax-h3` | MiniMax H3 video generation, edit and extend, 768p by default |
-| `wavespeed-minimax-speech-28` | MiniMax Speech 2.8 HD and Turbo text-to-speech |
-| `wavespeed-seedream-45` | ByteDance Seedream 4.5 text-to-image and image editing |
-| `wavespeed-nano-banana-pro` | Google Nano Banana Pro text-to-image and editing, native 4K |
-| `wavespeed-nano-banana-2` | Google Nano Banana 2 text-to-image and editing |
-| `wavespeed-seedance-15-pro` | ByteDance Seedance 1.5 Pro text-to-video and image-to-video |
-| `wavespeed-veo-31-fast` | Google Veo 3.1 Fast text-to-video, image-to-video, video extend |
-| `wavespeed-wan-26` | Alibaba Wan 2.6 text-to-video and image-to-video |
-| `wavespeed-wan-22-animate` | Wan 2.2 Animate character animation and replacement |
-| `wavespeed-infinitetalk-avatar` | InfiniteTalk talking-head video from a portrait and audio |
-| `wavespeed-minimax-speech-26` | MiniMax Speech 2.6 text-to-speech |
-| `wavespeed-image-upscaler` | Image upscaling to 2K / 4K / 8K |
-| `wavespeed-ultimate-video-upscaler` | Video upscaling to 720p / 1080p / 2K / 4K |
-| `wavespeed-face-swapper` | Image and video face swap, with consent and misuse guardrails |
-| `wavespeed-watermark-remover` | Watermark and overlay removal for media you own, with rights guardrails |
+`wavespeed` covers generating and editing images, generating, editing and extending videos with the shortcuts (the same default models as the WaveSpeed /chat page), and every other model in the catalog through one generic run: search models, read a model's schema, quote the price, run, upload local files with `@path`.
 
 ## Install
 
 **Any agent that reads `.agents/skills/` or `.claude/skills/`** (Claude Code, Codex, Cursor, OpenCode, Kimi Code, Antigravity, Copilot CLI, Amp, Droid, ...):
 
 ```bash
-npx skills add WaveSpeedAI/agent-skills            # all skills
-npx skills add WaveSpeedAI/agent-skills --skill wavespeed
+npx skills add WaveSpeedAI/agent-skills
 ```
 
 **Kiro** — Powers panel → *Add Custom Power* → *Import power from GitHub* → `https://github.com/WaveSpeedAI/agent-skills`.
 
 **Qwen Code / Codex / Kimi Code** — the repo is an Agent Plugins package: `qwen extensions install WaveSpeedAI/agent-skills`, or the dedicated packages below.
 
-**OpenClaw** — every skill is on ClawHub under `@wavespeed`: `clawhub install wavespeed`.
+**OpenClaw** — on ClawHub under `@wavespeed`: `clawhub install wavespeed`.
 
-**Dedicated packages** (same skills, native packaging):
+**Dedicated packages** (same skill, native packaging):
 
 - Claude Code: [WaveSpeedAI/claude-plugins](https://github.com/WaveSpeedAI/claude-plugins)
 - Codex: [WaveSpeedAI/codex-plugins](https://github.com/WaveSpeedAI/codex-plugins)
@@ -61,11 +37,11 @@ npm install -g @wavespeed/cli
 wavespeed login        # opens https://wavespeed.ai/accesskey and stores the key
 ```
 
-`WAVESPEED_API_KEY` in the environment also works, and the MCP server shares the CLI's stored login. The skills tell the agent never to ask a user to paste a key into the chat.
+`WAVESPEED_API_KEY` in the environment also works, and the MCP server shares the CLI's stored login. The skill tells the agent never to ask a user to paste a key into the chat.
 
 ## MCP
 
-`mcp.json` starts `@wavespeed/mcp` over stdio with `npx`. Tools: `list_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `generate_image`, `edit_image`, `generate_video`, `edit_video`, `extend_video`, `get_prediction`, `list_predictions`, `delete_predictions`, `get_balance`, `get_usage`, `list_billings`. Each skill's CLI examples map one-to-one onto `run_model` with the same model id and inputs.
+`mcp.json` starts `@wavespeed/mcp` over stdio with `npx`. Tools: `list_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `generate_image`, `edit_image`, `generate_video`, `edit_video`, `extend_video`, `get_prediction`, `list_predictions`, `delete_predictions`, `get_balance`, `get_usage`, `list_billings`. The skill's CLI commands map one-to-one onto these tools.
 
 ## Recommended models
 
