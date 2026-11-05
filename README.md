@@ -65,7 +65,7 @@ wavespeed login        # opens https://wavespeed.ai/accesskey and stores the key
 
 ## MCP
 
-`mcp.json` starts `@wavespeed/mcp` over stdio with `npx`. Tools: `list_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `generate_image`, `edit_image`, `generate_video`, `edit_video`, `extend_video`, `get_prediction`, `get_balance`. Each skill's CLI examples map one-to-one onto `run_model` with the same model id and inputs.
+`mcp.json` starts `@wavespeed/mcp` over stdio with `npx`. Tools: `list_models`, `get_model_schema`, `get_price`, `upload_file`, `run_model`, `generate_image`, `edit_image`, `generate_video`, `edit_video`, `extend_video`, `get_prediction`, `list_predictions`, `delete_predictions`, `get_balance`, `get_usage`, `list_billings`. Each skill's CLI examples map one-to-one onto `run_model` with the same model id and inputs.
 
 ## Recommended models
 

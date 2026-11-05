@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "wavespeed",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generate and edit AI media (image, video, audio, 3D) on the WaveSpeed platform: a general skill for the wavespeed CLI and MCP tools plus per-model skills (Seedream 5 Pro, GPT Image 2.5, Nano Banana, Seedance 2.5, Kling 4.0, Wan 3.0, MiniMax H3, MiniMax Speech, Veo 3.1, face swap, upscalers, watermark removal), and the WaveSpeed MCP server.",
   "author": {
     "name": "WaveSpeedAI",
